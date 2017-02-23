@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+
+# Local configuration
+.bashrc
+
+# Generated files
+**/*.js
+**/*.js.map
+!**/.eslintrc.js
+gh-pages
+apidocs.json
+.nvmrc
+module
+
+# Garbage
+*.log
+*~
+*#
+.DS_Store
+.nyc_output
+
+# IDE stuff
+.netbeans
+nbproject
+.idea
+.node_history
+*.sublime-*
+*.atom-*
+.vscode
+.tern-*
+.languagebabel
+jsconfig.json

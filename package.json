@@ -1,0 +1,47 @@
+{
+  "name": "promisified-core",
+  "description": "Promisified Node.js core modules",
+  "version": "0.0.1",
+  "author": "Robert Rossmann <rr.rossmann@me.com>",
+  "bugs": "https://github.com/Dreamscapes/promisified-core/issues",
+  "contributors": [],
+  "dependencies": {
+    "bluebird": "^3.4.7"
+  },
+  "devDependencies": {
+    "@strv/eslint-config-javascript": "^6.4.0",
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "eslint": "^3.15.0",
+    "handlebars": "^4.0.6",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "to-markdown": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": "^4"
+  },
+  "homepage": "https://github.com/Dreamscapes/promisified-core",
+  "keywords": [
+    "builtin",
+    "core",
+    "module",
+    "modules",
+    "node",
+    "nodejs",
+    "promise",
+    "promised",
+    "promises"
+  ],
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Dreamscapes/promisified-core"
+  },
+  "scripts": {
+    "test": "make test"
+  }
+}

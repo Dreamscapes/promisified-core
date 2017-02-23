@@ -1,0 +1,41 @@
+bin := node_modules/.bin/
+
+all: compile
+
+compile: install apidocs.json
+	@$(bin)babel src -q --extensions .es --source-maps both --out-dir src
+
+# In layman's terms: node_modules directory depends on the state of package.json
+# Make will compare their timestamps and only if package.json is newer, it will run this target.
+node_modules: package.json
+	@npm install
+
+apidocs.json:
+	@curl -s https://nodejs.org/api/all.json -o "$@"
+
+module: compile module/package.json
+	@node src/generate
+
+module/package.json:
+	@mkdir -p module && cp package.json module/package.json
+
+install: node_modules
+
+lint:
+	@$(bin)eslint --ext .es .
+
+# Delete all the .js and .js.map files (excluding any potential dotfiles with .js extension)
+distclean:
+	@rm -r module
+	@find src \
+		\( \
+			-name '*.js' \
+			-or -name '*.js.map' \
+		\) \
+		-not -name '.*.js' \
+		-print -delete
+
+.PHONY:
+	compile
+	lint
+	distclean

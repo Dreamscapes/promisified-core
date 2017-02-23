@@ -1,0 +1,31 @@
+'use strict'
+
+const Bluebird = require('bluebird')
+const {{module.name}} = require('{{module.name}}')
+
+module.exports = {
+  {{#each module.methods}}
+
+  /**
+   * {{markdown desc linebreak="   * "}}
+   *
+   * @method {{name}}
+   {{#each signatures.[0].params}}
+   * @param {{doctype type optional=optional}}  {{name}}  {{desc}}
+   {{#if options}}
+   {{#each options}}
+   * @param {{doctype type optional=optional}}  {{../name}}.{{name}}  {{desc}}
+   {{/each}}
+   {{/if}}
+   {{/each}}
+   * @return {Promise}
+   */
+  {{name}}({{props signatures.[0].params key="name" delimiter=", "}}) {
+    return Bluebird.fromCallback(done => {
+      return void {{../module.name}}.{{name}}({{props signatures.[0].params key="name" delimiter=", "}}, done)
+    })
+  },
+  {{/each}}
+}
+
+module.exports = Object.assign({}, {{module.name}}, module.exports)

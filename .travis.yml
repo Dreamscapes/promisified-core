@@ -14,12 +14,12 @@ script:
 - make lint
 before_deploy:
 - cd module
-# deploy:
-#   provider: npm
-#   email: rr.rossmann@gmail.com
-#   api_key:
-#     secure: ab6KQPc/4ASdXOkbIu0A1Eg9dJrTZsVUt/tK3NK8478f/hhxJAxC4DGkZuDVzAtvncSIUMgAzaE9/8l2ccLYGkLxT4dqtV2l0fyb31cpDL6Wziuv7jAQPwHDcuQkuK9le4wI8KHI0ClSrt9LADvlsWT/qssW9LDauqkuQn5PMkCNzkRVDyv7ua7OPjC8KtD1HMYMMZQ31olnFBtaR7a1PpUhCxj1JkaoP5fl5jE2EKFo85Gq6oi0q4UmXmrZyQ69K/5Vo57XcbiIv5t4qohcgOsDwZSW9XMb6H66hjbERmERMshsTS/fvAuyUSUncaD5d0DHfUzgXY+pxev/RYQ8E2AsuhovPnJAtqpuqao9Vy8isZQ3Go52f7M0jsg6+wY14b9/ApWT17n6mN789td/LdLJCTeOwh7rv1Hfc1qSmPULksxHk07SFAKq6EC+3JfHTPX9dghpfT3UhdBqCOr1Fl1wZ40DbI/bXaram0JLn+O1QL11hQQ3Dfzwae+ljj8cMpeUo1RHfWQuGI8U4lm2Ost5PPfUC+m78r/UlqpcASQ+MTNbxXNw2VW6C1ODqjtf+XOp5q1mKsU+xB3DcKZz60g5McyP8y8Z2d1t7gMk9kkBTb89lFzJqwnw+/0IC+ZcTGR2Qkm3MZ2Rcs/hSh6+aea54T/JUG0C1dTfY5Y3HYs=
-#   on:
-#     tags: true
-#     repo: Dreamscapes/promisified-core
-#     node: '7'
+deploy:
+  provider: npm
+  email: rr.rossmann@gmail.com
+  api_key:
+    secure: YJ5gIGRajMh/+KjeWAmWiZU8+YzE6NdiUY2M3jCXOAxYvWpMLsWHZRZGMowMWNvB2IEqhs01dlgitQvSirCgwYCq2QYVTtow5NREogTaB6gvL1R/mEts28HLogW6WrHwb47Xo2I2VwPrLhy0/ZKUg1TBXoNun+hnmuyYKJXt6veNeHE/IdQf0ydusT/sW3vkYVBy/v7+IYmDgCBLVPN5SdEqWBRQxF/tESHj1PrsnczsXXYv9PhkNyxaoUIuTMOx5W/X3g0IDOn+EAh8sjUWXSN9OyaVZhD1ffbT24DxNpcb+U0F5TTPSDbnGuLkKSkqL4MsfZGvQg3sUB1OdpRu/3R+S+2EqxXdT5lHlTBDwHnOzzYFW3s4oOyop00Gi4k1/eyOtxYG+oqk/3ClJT5KiFE2W+3SERRPH8hqbZU60tQ5BBM9O+jZ/KOrtNmYYr5IyRXR8nYGA2Z9RbqjHcz//MY/a24QXTiH6eouEgptQHUKx5KqvAJgX8umoVeiF5FLXvPuvNajnhcS8T6jQtceWSjYhCYsLj0K9UJHdIBgBf/raw9nn8ym9WUqDilpRlBIMpIwgq9nh1P/33MoZZjdLt+eoZjso53nj7hFjKhedCypDEs+ffAAxANcLaTCv0IWKb5vjo70fK+jAmQ9CVSPYBLMwdOX67cKvGjEX67i1QY=
+  on:
+    tags: true
+    repo: Dreamscapes/promisified-core
+    node: '7'

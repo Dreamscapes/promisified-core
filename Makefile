@@ -21,7 +21,7 @@ module/package.json:
 
 install: node_modules
 
-lint:
+lint: apidocs.json
 	@$(bin)eslint --ext .es .
 
 # Delete all the .js and .js.map files (excluding any potential dotfiles with .js extension)

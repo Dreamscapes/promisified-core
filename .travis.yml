@@ -14,6 +14,7 @@ script:
 before_deploy:
 - cd module
 deploy:
+  skip_cleanup: true
   provider: npm
   email: rr.rossmann@gmail.com
   api_key:

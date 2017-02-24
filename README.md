@@ -1,4 +1,15 @@
+[npm-badge]: https://badge.fury.io/js/promisified-core.svg
+[npm-url]: https://npmjs.org/package/promisified-core
+[travis-badge]: https://travis-ci.org/Dreamscapes/promisified-core.svg
+[travis-url]: https://travis-ci.org/Dreamscapes/promisified-core
+[make-badge]: https://img.shields.io/badge/built%20with-GNU%20Make-brightgreen.svg
+
+
 # promisified-core
+
+[![NPM Version][npm-badge]][npm-url]
+[![Build Status][travis-badge]][travis-url]
+![Built with GNU Make][make-badge]
 
 > Promisified Node.js core modules
 

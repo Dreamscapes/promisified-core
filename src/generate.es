@@ -1,3 +1,4 @@
+import 'source-map-support/register'
 import apidocs from '../apidocs'
 import templates from './templates'
 import fs from 'fs'

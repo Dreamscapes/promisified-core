@@ -7,6 +7,7 @@ const dest = path.join(__dirname, '..', 'module')
 
 // Generate all the module files
 for (const module of apidocs.modules) {
+  module.name = module.name.toLowerCase()
   module.methods = mkmethods(module)
 
   // Fix tls module's name

@@ -7,13 +7,18 @@ const dest = path.join(__dirname, '..', 'module')
 
 // Generate all the module files
 for (const module of apidocs.modules) {
-  module.name = module.name.toLowerCase()
-  module.methods = mkmethods(module)
+  // This module is not a "module" per se, it is a module in the documentation. Skip!
+  if (module.name === 'c/c++_addons') {
+    continue
+  }
 
   // Fix tls module's name
   if (module.name === 'tls_(ssl)') {
     module.name = 'tls'
   }
+
+  module.name = module.name.toLowerCase()
+  module.methods = mkmethods(module)
 
   generate({
     template: 'module',

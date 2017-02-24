@@ -21,9 +21,9 @@ module.exports = {
    * @return {Promise}
    */
   {{name}}({{props signatures.[0].params key="name" delimiter=", "}}) {
-    return Bluebird.fromCallback(done => {
-      return void {{../module.name}}.{{name}}({{props signatures.[0].params key="name" delimiter=", "}}, done)
-    })
+    return Bluebird.fromCallback(done =>
+      void {{../module.name}}.{{name}}({{props signatures.[0].params key="name" delimiter=", "}}, done)
+    )
   },
   {{/each}}
 }

@@ -15,18 +15,37 @@ for (const module of apidocs.modules) {
     module.name = 'tls'
   }
 
-  const compiled = templates.get('module')({ module })
-  const target = path.join(dest, `${module.name}.js`)
-  // eslint-disable-next-line no-sync
-  fs.writeFileSync(target, compiled, 'utf8')
+  generate({
+    template: 'module',
+    data: { module },
+    name: module.name,
+  })
 }
 
 // Generate index.js
-const compiled = templates.get('index')({ modules: apidocs.modules })
-const target = path.join(dest, 'index.js')
-// eslint-disable-next-line no-sync
-fs.writeFileSync(target, compiled, 'utf8')
+generate({
+  template: 'index',
+  data: { modules: apidocs.modules },
+  name: 'index',
+})
 
+
+/**
+ * Compile the module using the given template and data and save it to the filesystem
+ *
+ * @private
+ * @param     {Object}    [opts={}]         Options for the generation
+ * @param     {String}    opts.template     The template name to use
+ * @param     {Object}    opts.data         The data to send to the template
+ * @param     {String}    opts.name         The module's name (will be used as the module filename)
+ * @return    {void}
+ */
+function generate(opts = {}) {
+  const contents = templates.get(opts.template)(opts.data)
+  const filename = path.join(dest, `${opts.name}.js`)
+  // eslint-disable-next-line no-sync
+  fs.writeFileSync(filename, contents, 'utf8')
+}
 
 function mkmethods(definition) {
   const result = []

@@ -13,11 +13,10 @@ node_modules: package.json
 apidocs.json:
 	@curl -s https://nodejs.org/api/all.json -o "$@"
 
-module: compile module/package.json
-	@node src/generate
-
-module/package.json:
-	@mkdir -p module && cp package.json module/package.json
+module: compile
+	@mkdir -p module \
+	&& cp README.md LICENSE package.json module/ \
+	&& node src/generate
 
 install: node_modules
 

@@ -1,7 +1,7 @@
 {
   "name": "promisified-core",
   "description": "Promisified Node.js core modules",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Robert Rossmann <rr.rossmann@me.com>",
   "bugs": "https://github.com/Dreamscapes/promisified-core/issues",
   "contributors": [],

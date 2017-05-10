@@ -26,7 +26,11 @@ module.exports = {
    */
   {{name}}({{props signatures.[0].params key="name" delimiter=", "}}) {
     return Bluebird.fromCallback(done =>
+      {{#if signatures.[0].params.length}}
       void {{../module.name}}.{{name}}({{props signatures.[0].params key="name" delimiter=", "}}, done)
+      {{else}}
+      void {{../module.name}}.{{name}}(done)
+      {{/if}}
     )
   },
   {{/each}}

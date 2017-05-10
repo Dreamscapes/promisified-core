@@ -2,7 +2,9 @@
 
 'use strict'
 
+{{#if module.methods.length}}
 const Bluebird = require('bluebird')
+{{/if}}
 const {{module.name}} = require('{{module.name}}')
 
 module.exports = {

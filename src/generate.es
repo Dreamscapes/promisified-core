@@ -77,7 +77,7 @@ function mkmethods(definition) {
     const signatures = method.signatures[0] || []
     const last = signatures.params[signatures.params.length - 1] || {}
 
-    if (last.type !== 'Function') {
+    if (last.type !== 'Function' || last.name !== 'callback') {
       continue
     }
 

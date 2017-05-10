@@ -1,4 +1,5 @@
 bin := node_modules/.bin/
+nodeversion := 7.10.0
 
 all: compile
 
@@ -11,7 +12,7 @@ node_modules: package.json
 	@npm install
 
 apidocs.json:
-	@curl -s https://nodejs.org/api/all.json -o "$@"
+	@curl -s https://nodejs.org/docs/v$(nodeversion)/api/all.json -o "$@"
 
 module: compile
 	@mkdir -p module \

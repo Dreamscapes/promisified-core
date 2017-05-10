@@ -5,14 +5,16 @@ import fs from 'fs'
 import path from 'path'
 
 const dest = path.join(__dirname, '..', 'module')
+// These modules are not "modules" per se, they are modules in the documentation. Skip!
+const ignore = [
+  'c/c++_addons',
+  'tracing',
+  'deprecated_apis',
+]
+const modules = apidocs.modules.filter(module => !ignore.includes(module.name))
 
 // Generate all the module files
-for (const module of apidocs.modules) {
-  // This module is not a "module" per se, it is a module in the documentation. Skip!
-  if (module.name === 'c/c++_addons') {
-    continue
-  }
-
+for (const module of modules) {
   // Fix tls module's name
   if (module.name === 'tls_(ssl)') {
     module.name = 'tls'
@@ -31,7 +33,7 @@ for (const module of apidocs.modules) {
 // Generate index.js
 generate({
   template: 'index',
-  data: { modules: apidocs.modules },
+  data: { modules },
   name: 'index',
 })
 

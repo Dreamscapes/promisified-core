@@ -17,7 +17,8 @@ apidocs.json:
 module: compile
 	@mkdir -p module \
 	&& cp README.md LICENSE package.json module/ \
-	&& node src/generate
+	&& node src/generate \
+	&& $(bin)eslint --fix module
 
 install: node_modules
 

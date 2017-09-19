@@ -77,6 +77,14 @@ function mkmethods(definition) {
     }
   }
 
+  // ... aaand sometimes some module (like zlib) has some "convenience" methods which are described
+  // in a completely separate section hidden in miscs section, which itself is an array... 🤦
+  for (const miscs of definition.miscs || []) {
+    if (Array.isArray(miscs.methods)) {
+      methods.push(...miscs.methods)
+    }
+  }
+
   // Check if this method accepts a callback. We can detect that by checking the last arg's type
   for (const method of methods) {
     const signatures = method.signatures[0] || []

@@ -7,9 +7,14 @@ import path from 'path'
 const dest = path.join(__dirname, '..', 'module')
 // These modules are not "modules" per se, they are modules in the documentation. Skip!
 const ignore = [
-  'c/c++_addons',
+  'c++_addons',
   'tracing',
   'deprecated_apis',
+  'internationalization_support',
+  'performance_timing_api',
+  'n-api',
+  'inspector',
+  'async_hooks',
 ]
 const modules = apidocs.modules.filter(module => !ignore.includes(module.name))
 

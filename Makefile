@@ -1,5 +1,5 @@
 bin := node_modules/.bin/
-nodeversion := 7.10.0
+nodeversion := 8.5.0
 
 all: compile
 
